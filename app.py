@@ -5,7 +5,7 @@ st.set_page_config(
     page_title="Brain Wars",
     page_icon="icon.png",
     menu_items={
-        "About":"Get ready for a Battle of the Brains with Brain Wars! Our trivia game features diverse categories such as Entertainment, Sports & Leisure, Language, and Art & Literature. Test your wits against friends or solo, and see how you stack up in this ultimate trivia showdown. With questions ranging from General Knowledge to Religion & Mythology, it's time to show off your brainpower!"
+        "About":"Get ready for a Battle of the Brains with Brain Wars! Our trivia game features diverse categories such as Entertainment, Sports & Leisure, Language, and Art & Literature. Test your wits and see how you stack up in this ultimate trivia showdown. With questions ranging from General Knowledge to Religion & Mythology, it's time to show off your brainpower!"
     }   
 )
 
@@ -39,8 +39,8 @@ if btn:
         response = requests.get(api_url, headers={'X-Api-Key': '2jWCY0dASiPZc7RLybXvXA==R9oC0XPKPWiGJ6k6'})
         if response.status_code == requests.codes.ok:
             data=response.json()[0]
-            st.write(f"<h4 style=font-size:27px;color:lightgreen;>{data["question"]}</h4>",unsafe_allow_html=True)
+            st.write(f"<h4 style=font-size:27px;color:lightgreen;>{data['question']}</h4>",unsafe_allow_html=True)
             with st.expander("Answer"):
-                st.write(f"<h4 style=color:#7DF9FF;>{data["answer"]}</h4>",unsafe_allow_html=True)
+                st.write(f"<h4 style=color:#7DF9FF;>{data['answer']}</h4>",unsafe_allow_html=True)
     except:
         st.error("Network Error")
